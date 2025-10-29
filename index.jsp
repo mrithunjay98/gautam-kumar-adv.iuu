@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adv. Gautam Kumar - Legal Consultant</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a237e;
+      color: white;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      width: 70%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      font-size: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      transition: max-height 0.3s ease;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hamburger icon (hidden on desktop) */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Mobile Navigation */
+    @media (max-width: 868px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        background-color: #1a237e;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      nav ul.show {
+        max-height: 300px; /* expand menu */
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1528747008803-1d6a01f3a90e?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: gold;
+      color: #1a237e;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #f5c400;
+    }
+
+    section {
+      width: 100%;
+      max-width: 1000px;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: #1a237e;
+      margin-bottom: 15px;
+    }
+
+    .practice ul {
+      list-style: none;
+      padding: 0;
+      line-height: 2;
+    }
+
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: 'Poppins', sans-serif;
+      width: 100%;
+    }
+
+    button {
+      background-color: #1a237e;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background-color: #303f9f;
+    }
+
+    footer {
+      background-color: #1a237e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px 12px;
+  margin: 20px auto;                /* centers horizontally */
+  width: 100%;
+  max-width: 700px;            /* keeps it narrow and centered */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;      /* ensures padding doesn’t push width */
+}
+
+.about-container img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.about-container div {
+  width: 100%;
+  text-align: center;
+}
+
+body {
+   margin: 20px auto;    
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* prevents any horizontal scroll */
+}
+
+@media (max-width: 800px) {
+  .about-container {
+    max-width: 95%;
+    padding: 20px 10px;
+  }
+
+  .about-container img {
+    width: 130px;
+  }
+}
+
+  </style>
+  <meta charset="UTF-8">
+  
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <h1> Muzaffarpur Court</h1>
+      <i class="fa-solid fa-bars menu-toggle" onclick="toggleMenu()"></i>
+      <ul id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#practice">Practice Areas</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<marquee behavior="scroll" direction="left" scrollamount="6" style="color:red; font-weight:bold; font-size:20px;">
+Welcome to website of Advocate Gautam Kumar 
+</marquee>
+<br>
+
+  <!-- About Section -->
+<div class="about-container">
+<br>
+  <img src="Gautam.jpeg" alt="Advocate Gautam Kumar">
+  <div style="font-family: 'Noto Sans Devanagari', Arial, sans-serif;">
+  <!-- Hindi Section -->
+  <h2>अधिवक्ता गौतम कुमार</h2>
+  <p>उच्च न्यायालय अधिवक्ता | विधिक परामर्शदाता</p>
+  <p><strong>पता:</strong> सी.जे.एम. कोर्ट के बगल में  व्यवहार न्यायालय</p>
+  <p><strong>फोन:</strong> <a href="tel:9931470826">9931470826 </a></p>
+  <p><strong>ईमेल:</strong> <a href="mailto:adv.gautam@example.com">adv.gautam@example.com</a></p>
+  <p><strong>व्हाट्सएप:</strong> <a href="https://wa.me/9931470826" target="_blank">व्हाट्सएप पर चैट करें</a></p>
+
+  <hr style="border: 1px solid red;">
+
+
+  <!-- English Section -->
+  <h2>Advocate Gautam Kumar</h2>
+  <p>High Court Lawyer | Legal Consultant</p>
+  <p><strong>Address:</strong> Nearby C.J.M Court, Muzaffarpur</p>
+  <p><strong>Phone:</strong> <a href="tel:6204799832">6204799832</a></p>
+  <p><strong>Email:</strong> <a href="mailto:adv.gautam@example.com">adv.gautam@example.com</a></p>
+  <p><strong>WhatsApp:</strong> <a href="https://wa.me/6204799832" target="_blank">Chat on WhatsApp</a></p>
+</div>
+
+</div>
+
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h2>Trusted Legal Advice & Representation</h2>
+    <p>Serving clients with dedication, integrity, and professionalism.</p>
+    <a href="#contact" class="btn">Book Appointment</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Adv. Gautam Kumar</h2>
+    <p>Advocate Gautam Kumar is a senior legal practitioner with over 20 years of experience representing clients in civil, criminal, and corporate matters across India.</p>
+    <p>He believes in fairness, transparency, and delivering justice with empathy and excellence.</p>
+  </section>
+
+  <!-- Practice Areas -->
+  <section id="practice" class="practice">
+    <h2>Practice Areas</h2>
+    <ul>
+      <li><i class="fa-solid fa-gavel"></i> Civil Litigation</li>
+      <li><i class="fa-solid fa-scale-balanced"></i> Criminal Defense</li>
+      <li><i class="fa-solid fa-briefcase"></i> Corporate Law</li>
+      <li><i class="fa-solid fa-people-group"></i> Family & Divorce Law</li>
+      <li><i class="fa-solid fa-building"></i> Property Disputes</li>
+      <li><i class="fa-solid fa-file-contract"></i> Legal Documentation & Notary</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <form onsubmit="sendMessage(event)">
+      <label>Name</label>
+      <input type="text" id="name" required>
+
+      <label>Email</label>
+      <input type="email" id="email" required>
+
+      <label>Message</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Adv. Gautam Kumar | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    function sendMessage(e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been sent successfully.");
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+    }
+  </script>
+
+</body>
+</html>
